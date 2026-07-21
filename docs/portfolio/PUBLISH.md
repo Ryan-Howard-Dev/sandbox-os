@@ -1,24 +1,33 @@
 # Publish checklist — GitHub portfolio
 
-`gh` is not available in this environment. Run these on your machine after installing [GitHub CLI](https://cli.github.com/) or use the website.
-
 ## A. Publish `sandbox-os` (this repo)
+
+`gh` is often installed but **missing from PATH** until you open a **new** PowerShell. Full path that works on this machine:
+
+`C:\Program Files\GitHub CLI\gh.exe`
+
+### Option 1 — GitHub CLI (new terminal)
 
 ```powershell
 cd C:\Users\RH\Downloads\sandbox-os
-
-# If not already committed:
-git branch -M main
-# (initial commit should already exist from portfolio prep)
-
-# Create public repo + push (GitHub CLI):
-gh auth login
-gh repo create sandbox-os --public --source=. --remote=origin --push --description "Sandbox OS — architecture, decisions, Diátaxis map, multi-pass documentation audits"
-
-# Or: create empty public repo on github.com, then:
-# git remote add origin https://github.com/Ryan-Howard-Dev/sandbox-os.git
-# git push -u origin main
+$gh = "C:\Program Files\GitHub CLI\gh.exe"
+& $gh auth login
+& $gh repo create sandbox-os --public --source=. --remote=origin --push --description "Sandbox OS — architecture, decisions, Diátaxis map, multi-pass documentation audits"
 ```
+
+### Option 2 — Website + git only (no gh)
+
+1. Open https://github.com/new  
+2. Name: `sandbox-os` · **Public** · **Do not** add README/license (repo already has them)  
+3. Then:
+
+```powershell
+cd C:\Users\RH\Downloads\sandbox-os
+git remote add origin https://github.com/Ryan-Howard-Dev/sandbox-os.git
+git push -u origin main
+```
+
+(If `origin` already exists: `git remote set-url origin https://github.com/Ryan-Howard-Dev/sandbox-os.git`)
 
 ## B. Profile README
 
