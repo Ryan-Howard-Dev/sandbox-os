@@ -1,33 +1,38 @@
 # Publish checklist — GitHub portfolio
 
-## A. Publish `sandbox-os` (this repo)
+## A. Publish `sandbox-os` (same flow as Music)
 
-`gh` is often installed but **missing from PATH** until you open a **new** PowerShell. Full path that works on this machine:
+Same as Music: **terminal only** — `origin` URL under your account, then `git push -u origin main`.
 
-`C:\Program Files\GitHub CLI\gh.exe`
+Music already had `https://github.com/Ryan-Howard-Dev/sovereign-music-console.git`.  
+`sandbox-os` does not exist on GitHub yet, so one create step is required (still CLI — not a different process).
 
-### Option 1 — GitHub CLI (new terminal)
+Open a **new** PowerShell (so `gh` is on PATH), or use the full path below.
 
 ```powershell
 cd C:\Users\RH\Downloads\sandbox-os
+
 $gh = "C:\Program Files\GitHub CLI\gh.exe"
-& $gh auth login
-& $gh repo create sandbox-os --public --source=. --remote=origin --push --description "Sandbox OS — architecture, decisions, Diátaxis map, multi-pass documentation audits"
+& $gh auth login   # skip if already logged in
+
+# Creates Ryan-Howard-Dev/sandbox-os and sets origin (same kind of remote Music uses)
+& $gh repo create sandbox-os --public --source=. --remote=origin --description "Sandbox OS — architecture, decisions, Diátaxis map, multi-pass documentation audits"
+
+# Same as Music from here:
+git push -u origin main
 ```
 
-### Option 2 — Website + git only (no gh)
+If `gh repo create` already pushed for you, `git push` will just say up to date.
 
-1. Open https://github.com/new  
-2. Name: `sandbox-os` · **Public** · **Do not** add README/license (repo already has them)  
-3. Then:
+Equivalent without the combined flag — identical to re-adding Music’s origin after `filter-repo`:
 
 ```powershell
-cd C:\Users\RH\Downloads\sandbox-os
+& $gh repo create sandbox-os --public --description "Sandbox OS — architecture, decisions, Diátaxis map, multi-pass documentation audits"
 git remote add origin https://github.com/Ryan-Howard-Dev/sandbox-os.git
 git push -u origin main
 ```
 
-(If `origin` already exists: `git remote set-url origin https://github.com/Ryan-Howard-Dev/sandbox-os.git`)
+(`git remote add` fails if `origin` exists — then use `git remote set-url origin https://github.com/Ryan-Howard-Dev/sandbox-os.git`)
 
 ## B. Profile README
 
