@@ -1,24 +1,23 @@
 # Ryan Howard
 
-Independent developer and technical author. I build **sovereign-first** tools (Linux, Android, web) and treat **documentation as a first-class engineering practice** — Diátaxis structure, ADRs, and multi-pass audits with evidence and confidence ratings.
+I build **SSRD** — sovereign-first tools for Linux, Android, and the web. Small teams, local-first where it matters, honest about what still ships as beta.
 
-Comfortable on **Ubuntu/Linux**, the **command line**, and **Git**. Interested in open-source documentation practice (including Canonical-style Technical Author work).
+## Projects
 
-## Portfolio (start here)
+| Project | Notes |
+|---------|--------|
+| [sovereign-music-console](https://github.com/Ryan-Howard-Dev/sovereign-music-console) | Self-hosted music console — locker, playback, Android/desktop |
+| [sandbox-os](https://github.com/Ryan-Howard-Dev/sandbox-os) | Platform docs — architecture, decisions, station map |
+| [sandbox-builder-docs](https://github.com/Ryan-Howard-Dev/sandbox-builder-docs) | Builder / Conduit operator docs (Sphinx); app source stays private |
 
-| Link | Why |
-|------|-----|
-| [Sandbox Music README](https://github.com/Ryan-Howard-Dev/sovereign-music-console#readme) | User-facing product docs — run paths, platforms, honest beta limits |
-| [ADR 001 — locker never auto-delete](https://github.com/Ryan-Howard-Dev/sovereign-music-console/blob/main/adr/001-locker-never-auto-delete.md) | Short, enforceable product decision |
-| [Music docs/audit](https://github.com/Ryan-Howard-Dev/sovereign-music-console/tree/main/docs/audit) | Multi-pass audit + [risk register](https://github.com/Ryan-Howard-Dev/sovereign-music-console/blob/main/docs/risk-register.md) |
-| [Sandbox OS (docs portfolio)](https://github.com/Ryan-Howard-Dev/sandbox-os) | Platform vision, [DECISIONS](https://github.com/Ryan-Howard-Dev/sandbox-os/blob/main/docs/DECISIONS.md), [Diátaxis map](https://github.com/Ryan-Howard-Dev/sandbox-os/blob/main/docs/diataxis.md), Pass 1–2 audits |
+## Docs worth reading
 
-## Approach
+- [Music console README](https://github.com/Ryan-Howard-Dev/sovereign-music-console#readme) — how to run it, platforms, limits
+- [ADR: locker never auto-deletes](https://github.com/Ryan-Howard-Dev/sovereign-music-console/blob/main/adr/001-locker-never-auto-delete.md)
+- [Sandbox OS decisions](https://github.com/Ryan-Howard-Dev/sandbox-os/blob/main/docs/DECISIONS.md)
 
-- Separate **explanation / how-to / reference / tutorial** where possible ([Diátaxis](https://diataxis.fr/))  
-- Prefer **Verified Facts** over aspirational claims; track doc↔code drift as issues  
-- Ship **private product** where needed; keep **public documentation + selected open repos** for review and collaboration  
+I keep docs next to the work: short ADRs when a rule must stick, and status language that matches the code.
 
-## Contact
+## Elsewhere
 
-GitHub: [@Ryan-Howard-Dev](https://github.com/Ryan-Howard-Dev)
+[@Ryan-Howard-Dev](https://github.com/Ryan-Howard-Dev)
