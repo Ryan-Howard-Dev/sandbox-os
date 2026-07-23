@@ -158,8 +158,33 @@ Recorded choices that should **not be re-litigated** every session unless there 
 
 ---
 
+## D-016 — Docs: conflict copies + Vault-linked secrets
+
+**Decision:**
+
+1. Household Docs/Sheets sync **must not** use silent last-write-wins for document or sheet **bodies**. v0 default is **conflict copies** (keep both revisions as open interchange files). Markdown may attempt 3-way merge then fall back to conflict copy. ODF/CSV: conflict copy only in v0–v1. CRDT live collab is optional later and never replaces conflict copies for binary/CSV.
+2. Spreadsheets/documents **must not** sync plaintext credentials/tokens; secrets are **Vault-linked** (structural). Household Docs sync does not ship without that boundary.
+
+**Reason:** Sync without a conflict policy eats work; plaintext secrets in synced sheets repeat the logcat/token dump failure class.
+
+**See:** [BUILT-IN-DOCS.md](./BUILT-IN-DOCS.md). **Supersedes:** open question “LibreOffice vs native” as the primary Docs decision — native local-first is the product path; Office engines are optional compat only.
+
+---
+
+## D-017 — Product browser is Tide only; never Firefox/Chromium in OS
+
+**Decision:** Sandbox OS ISO and session autostart **must not** install or launch Firefox, firefox-esr, Chromium, or Chrome. The only product browser is **sandbox-browser** (Conduit THE TIDE). Dev workbenches on Windows may use any host browser to hit `127.0.0.1:3002`; that is not the OS image.
+
+**Reason:** Founder policy and [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md) — no third-party browser telemetry as the shell.
+
+**See:** `sandbox-os-core` package list + sway/labwc autostart (2026-07-23).
+
+---
+
 ## Change log
 
 | Date | ID | Change |
 |------|-----|--------|
+| 2026-07-23 | D-017 | Never Firefox/Chromium in OS image or autostart — Tide only |
+| 2026-07-23 | D-016 | Docs station: conflict copies + Vault-linked secrets; native-first path |
 | 2026-07-07 | D-001–D-015 | Initial decisions record from Music + OS design sessions; Conduit audit added (D-002, D-013) |

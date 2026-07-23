@@ -1,6 +1,6 @@
 # Built-in platform — stations, not a surveillance store
 
-**Last updated:** 2026-07-12  
+**Last updated:** 2026-07-23  
 **Status:** Core product definition
 
 ## What Sandbox OS is
@@ -16,7 +16,7 @@ One operating system that **feels the same** on phone, PC, Pi, and laptop: same 
 | Email | **Mail** — native IMAP/SMTP client; optional tier34 mail server (not Proton/Gmail wrapper) |
 | Music & media | **Media** — Sandbox Music (`sandbox-music`); full player, podcasts, cast, library |
 | Private network | **Network / Ghost** — native WireGuard overlay; Home / Circle / Max modes (not Proton VPN wrapper) |
-| Words & files | **Docs / Files** — local-first, sync optional |
+| Words & files | **Docs** — local-first documents & sheets; locker sync with conflict copies; Vault-linked secrets ([BUILT-IN-DOCS.md](./BUILT-IN-DOCS.md)) |
 | Pay & trade | **Vault** + **Marketplace** |
 | Make things | **Builder** — artistic / creative freedom |
 | Play games | **Steam, gaming platforms** — optional, user chooses |
@@ -83,7 +83,7 @@ Sandbox OS does **not** ship Firefox or Chromium as the product browser.
 |-------|--------|
 | OS browser station | **sandbox-conduit** — THE TIDE (tabs, search, Ghost/Defense routing) |
 | Engine | Tauri WebView2 (Windows) / WebKitGTK (Linux) |
-| ISO | No `firefox-esr` long-term; launcher does not auto-open a third-party browser |
+| ISO | **Never** package `firefox-esr`, Firefox, Chromium, or Chrome. Product browser is **sandbox-browser** (THE TIDE) under `/opt/sandbox/stations/browser/`. Autostart must not fall back to third-party browsers. |
 
 Builder (full Conduit) remains a separate **Builder** station — browser is Tide extracted for daily web use (`BrowserDashboard.tsx`, route `/tide?mode=os`).
 
@@ -118,5 +118,5 @@ Spec: [BUILT-IN-MAIL.md](./BUILT-IN-MAIL.md).
 ## Open questions
 
 1. Android app compatibility layer — yes/no/later for banking apps?  
-2. Docs station — fork LibreOffice vs lightweight native editor?  
+2. Docs — ODF engine embed vs optional package; Files station vs Docs-owned home? (Sync conflicts + Vault secrets: **decided** in [BUILT-IN-DOCS.md](./BUILT-IN-DOCS.md); build not started.)  
 3. How Builder-signed third-party stations install without becoming a spy store?

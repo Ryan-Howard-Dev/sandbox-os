@@ -42,6 +42,7 @@
 | `docs/audit/deployment-analysis.md` | Pass 2 analysis — Spread Host | Pass 2 code audit | 2026-07-21 | High | deployment invariants |
 | `docs/audit/provider-invariants.md` | Pass 2 invariants — Provider / model routing | Pass 2 code audit | 2026-07-21 | High | `sandbox-conduit (1)/` |
 | `docs/audit/provider-analysis.md` | Pass 2 analysis — Provider / model routing | Pass 2 code audit | 2026-07-21 | High | provider invariants |
+| `docs/BUILT-IN-DOCS.md` | Docs/Sheets station spec — conflict copies, Vault secrets, formats | Product architecture | 2026-07-23 | High | `BUILT-IN-PLATFORM.md`, `VAULT-PASSWORDS.md`, D-016 |
 | `docs/diataxis.md` | Diátaxis quadrant map of this docs suite | Portfolio prep | 2026-07-22 | High | All `docs/*.md` |
 | `docs/portfolio/github-profile-README.md` | Copy for `Ryan-Howard-Dev/Ryan-Howard-Dev` profile repo | Portfolio prep | 2026-07-22 | High | Public GitHub URLs |
 | `docs/portfolio/PUBLISH.md` | Steps to publish / pin / open issues | Portfolio prep | 2026-07-22 | High | — |

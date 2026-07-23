@@ -34,6 +34,10 @@ This repository’s documentation is organized roughly along [Diátaxis](https:/
 |-----|--------|
 | [VISION.md](./VISION.md) | Why Sandbox OS |
 | [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md) | Stations vs surveillance store |
+| [BUILT-IN-DOCS.md](./BUILT-IN-DOCS.md) | Docs/Sheets station — conflict copies, Vault secrets, formats |
+| [BUILT-IN-MAIL.md](./BUILT-IN-MAIL.md) | Mail station spec |
+| [BUILT-IN-VPN.md](./BUILT-IN-VPN.md) | Network / Ghost VPN spec |
+| [VAULT-PASSWORDS.md](./VAULT-PASSWORDS.md) | Password / passkey vault spec |
 | [NETWORK-OVERLAY-GHOST.md](./NETWORK-OVERLAY-GHOST.md) | Ghost / overlay concept |
 | [THREAT-MODEL-TARGETED.md](./THREAT-MODEL-TARGETED.md) | Adversary model |
 | [ETHICS-AND-ECONOMICS.md](./ETHICS-AND-ECONOMICS.md) | Hosted vs self-host |

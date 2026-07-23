@@ -29,6 +29,7 @@ Pass 1 inventory and Pass 2 subsystem audits (launcher, Spread Host, Conduit pro
 | Artifact | Purpose |
 |----------|---------|
 | [documentation-manifest.md](./docs/audit/documentation-manifest.md) | Master TOC of docs |
+| [BUILT-IN-DOCS.md](./docs/BUILT-IN-DOCS.md) | Docs/Sheets station spec (planning only) |
 | [launcher-analysis.md](./docs/audit/launcher-analysis.md) | Node Station Launcher & Daemon |
 | [deployment-analysis.md](./docs/audit/deployment-analysis.md) | Spread Host USB deployment |
 | [provider-analysis.md](./docs/audit/provider-analysis.md) | Conduit provider / model routing |
