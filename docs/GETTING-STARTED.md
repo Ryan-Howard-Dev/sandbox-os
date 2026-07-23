@@ -73,7 +73,7 @@ Build **the home screen** — not the kernel.
 | Compositor | **Wayland** — labwc, sway, or COSMIC (pick one, don’t write compositor) |
 | Shell | Station launcher grid + settings + system tray |
 | Identity | Ed25519 keys (reuse patterns from Conduit/Music) |
-| Browser station | **sandbox-browser** (Conduit THE TIDE) — **never** Firefox/Chromium |
+| Browser station | **Sandbox Browser (THE TIDE)** — `sandbox-browser`; never Firefox/Chromium |
 | tier34 client | Health, locker sync stub |
 
 **Repo:** new `sandbox-os-core` or `os-core` when ready — **first code repo for OS**, separate from `sandbox-os` docs.

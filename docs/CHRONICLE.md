@@ -158,12 +158,10 @@ Explored **sandbox-conduit** (THE TIDE at `/tide`, `BrowserDashboard.tsx`) and *
 
 | Principle | Implementation |
 |-----------|----------------|
-| Boot = shell only | labwc/sway + `launcher-server.mjs`; no station binaries at login |
-| Browser | Conduit Tide → `sandbox-browser`; **never** Firefox/Chromium in ISO or autostart |
-| Music | sovereign-music-console Tauri; launcher must not open tier34 root URL |
-| Catalog | `sandbox-os-core/shell/stations/catalog.json` + `launch.mjs` spawn stub |
+| Boot = shell + Sandbox Browser | labwc/sway + `launcher-server.mjs` + **THE TIDE** (`sandbox-browser`); other stations on demand |
+| Browser | **Sandbox Browser = THE TIDE** — required product station; **never** Firefox/Chromium |
 
-**2026-07-23:** Removed `firefox-esr` from ISO package list and sway/labwc autostart. Home opens via `sandbox-browser` only (notify if missing). See `sandbox-os-core` shell config + [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md).
+**2026-07-23:** Removed Firefox/Chromium from ISO and autostart. Tide is the Browser station (required), not an optional wedge. See [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md) / D-017.
 
 **Tide assessment follow-up:** No login vault today — recommend **OS-level Sandbox Vault** (E2E + tier34 sync, Tide autofill/passkey bridge, duress PIN) over Tide-embedded or Music locker; spec in [VAULT-PASSWORDS.md](./VAULT-PASSWORDS.md).
 

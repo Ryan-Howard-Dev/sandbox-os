@@ -171,13 +171,18 @@ Recorded choices that should **not be re-litigated** every session unless there 
 
 ---
 
-## D-017 — Product browser is Tide only; never Firefox/Chromium in OS
+## D-017 — Sandbox Browser is THE TIDE; never Firefox/Chromium
 
-**Decision:** Sandbox OS ISO and session autostart **must not** install or launch Firefox, firefox-esr, Chromium, or Chrome. The only product browser is **sandbox-browser** (Conduit THE TIDE). Dev workbenches on Windows may use any host browser to hit `127.0.0.1:3002`; that is not the OS image.
+**Decision:**
 
-**Reason:** Founder policy and [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md) — no third-party browser telemetry as the shell.
+1. **Sandbox Browser** = **THE TIDE** (`sandbox-browser` from Conduit). That is the OS web station — not a future optional app.
+2. ISO and session autostart **must not** install or launch Firefox, firefox-esr, Chromium, or Chrome.
+3. A complete Sandbox OS image **includes** the Tide binary at `/opt/sandbox/stations/browser/sandbox-browser` and opens it for Home / Browse. Missing Tide is an **incomplete image**, not a cue to fall back to Firefox.
+4. Dev workbenches on Windows may use any host browser to hit `127.0.0.1:3002`; that is not the OS product.
 
-**See:** `sandbox-os-core` package list + sway/labwc autostart (2026-07-23).
+**Reason:** Founder policy — first-party browser only; Tide is the product name for that station.
+
+**See:** [BUILT-IN-PLATFORM.md](./BUILT-IN-PLATFORM.md), `sandbox-os-core` package list + autostart.
 
 ---
 
@@ -185,6 +190,6 @@ Recorded choices that should **not be re-litigated** every session unless there 
 
 | Date | ID | Change |
 |------|-----|--------|
-| 2026-07-23 | D-017 | Never Firefox/Chromium in OS image or autostart — Tide only |
+| 2026-07-23 | D-017 | Sandbox Browser = THE TIDE (required); never Firefox/Chromium |
 | 2026-07-23 | D-016 | Docs station: conflict copies + Vault-linked secrets; native-first path |
 | 2026-07-07 | D-001–D-015 | Initial decisions record from Music + OS design sessions; Conduit audit added (D-002, D-013) |

@@ -11,7 +11,7 @@ One operating system that **feels the same** on phone, PC, Pi, and laptop: same 
 
 | Need | Built-in station (first-party) |
 |------|--------------------------------|
-| Web | **Browser** — Sandbox Browser (Conduit THE TIDE); no Firefox, no Chrome telemetry |
+| Web | **Sandbox Browser (THE TIDE)** — first-party only; never Firefox/Chrome |
 | Talk to people | **Social** — E2E messages, follows on *your* server |
 | Email | **Mail** — native IMAP/SMTP client; optional tier34 mail server (not Proton/Gmail wrapper) |
 | Music & media | **Media** — Sandbox Music (`sandbox-music`); full player, podcasts, cast, library |
@@ -75,19 +75,19 @@ Sandbox OS is **not** “another Android ROM” with a store removed. It is a **
 
 Early phone images may reuse some Android HAL/driver plumbing under the hood; the **user-facing product** is Sandbox shell + stations, not Play Store + Google account.
 
-## First-party browser
+## First-party browser — THE TIDE is Sandbox Browser
 
-Sandbox OS does **not** ship Firefox or Chromium as the product browser.
+**Sandbox Browser** and **THE TIDE** are the same product station. Conduit Builder stays a separate **Builder** station; daily web use is Tide extracted as `sandbox-browser` (`BrowserDashboard.tsx`, `/tide?mode=os`).
+
+Sandbox OS does **not** ship Firefox or Chromium as the product browser — not as a temporary wedge, not as a fallback.
 
 | Layer | Choice |
 |-------|--------|
-| OS browser station | **sandbox-conduit** — THE TIDE (tabs, search, Ghost/Defense routing) |
+| OS browser station | **THE TIDE** — binary `sandbox-browser` (tabs, search, Ghost/Defense routing) |
 | Engine | Tauri WebView2 (Windows) / WebKitGTK (Linux) |
-| ISO | **Never** package `firefox-esr`, Firefox, Chromium, or Chrome. Product browser is **sandbox-browser** (THE TIDE) under `/opt/sandbox/stations/browser/`. Autostart must not fall back to third-party browsers. |
+| ISO | **Must** install Tide at `/opt/sandbox/stations/browser/sandbox-browser`. **Never** package or autostart `firefox-esr`, Firefox, Chromium, or Chrome. Missing Tide = incomplete OS image. |
 
-Builder (full Conduit) remains a separate **Builder** station — browser is Tide extracted for daily web use (`BrowserDashboard.tsx`, route `/tide?mode=os`).
-
-See `sandbox-os-core/docs/STATIONS-ARCHITECTURE.md` for lazy-load boot model and station catalog.
+See `sandbox-os-core/docs/STATIONS-ARCHITECTURE.md` and `stations/browser/README.md`.
 
 ## First-party network (VPN / Ghost)
 
